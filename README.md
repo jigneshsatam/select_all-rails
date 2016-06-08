@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 Call the function on main checkbox and add class 'selectable' to sub-checkboxes.
+Example link: https://jsfiddle.net/jigneshsatam/qvd2mtjd/1/
 
 ## Development
 
