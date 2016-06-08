@@ -1,3 +1,8 @@
+//Make sure jQuery has been loaded before select_all.js
+if (typeof jQuery === "undefined") {
+  throw new Error("select_all requires jQuery");
+}
+
 (function ( $ ) {
   $.fn.select_all = function() {
     $(this).addClass("select_all");
