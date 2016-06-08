@@ -19,6 +19,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install select_all-rails
+    
+And add the following line to your application.js file:
+
+    //= require select_all.js
 
 ## Usage
 
