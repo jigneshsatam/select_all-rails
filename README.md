@@ -19,10 +19,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install select_all-rails
+    
+And add the following line to your application.js file:
+
+    //= require select_all.js
 
 ## Usage
 
-TODO: Write usage instructions here
+<p>Call the function on main checkbox and add class 'selectable' to sub-checkboxes.</p>
+
+<p>Example link: https://jsfiddle.net/jigneshsatam/qvd2mtjd/1/ </p>
 
 ## Development
 
