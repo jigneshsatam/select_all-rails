@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple to select all checkboxes.}
   spec.description   = %q{Simple to select all checkboxes.}
-  spec.homepage      = "https://github.com/JigneshSatam/checkbox_select_all"
+  spec.homepage      = "https://github.com/JigneshSatam/select_all-rails"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
