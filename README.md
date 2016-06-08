@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Call the function on main checkbox and add class 'selectable' to sub-checkboxes.
 
 ## Development
 
