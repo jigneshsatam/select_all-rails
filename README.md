@@ -28,7 +28,7 @@ And add the following line to your application.js file:
 
 <p>Call the function on main checkbox and add class 'selectable' to sub-checkboxes.</p>
 
-<p>Example link: https://jsfiddle.net/jigneshsatam/qvd2mtjd/1/ </p>
+<p>Example link: http://jigneshsatam.github.io/checkbox_select_all/index_demo.html </p>
 
 ## Development
 
