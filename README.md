@@ -30,6 +30,19 @@ And add the following line to your application.js file:
 
 <p>Example link: http://jigneshsatam.github.io/checkbox_select_all/index_demo.html </p>
 
+
+In Rails, index.html.haml
+```
+= check_box_tag 'checkAll'
+= check_box_tag 'selected_ids[]', "1", false, class: 'selectable'
+= check_box_tag 'selected_ids[]', "2", false, class: 'selectable'
+= check_box_tag 'selected_ids[]', "3", false, class: 'selectable'
+- content_for :page_js do
+  :javascript
+    $("#checkAll").select_all();
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
