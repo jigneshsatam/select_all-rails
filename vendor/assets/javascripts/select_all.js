@@ -4,16 +4,36 @@ if (typeof jQuery === "undefined") {
 }
 
 (function ( $ ) {
-  $.fn.select_all = function() {
-    $(this).addClass("select_all");
-    $(".select_all").change(function(){
-      $(".selectable").prop('checked', $(this).prop("checked"));
+  $.fn.select_all = function(options) {
+    var settings = $.extend({
+      class: "no_class"
+    }, options );
+
+    var select_all = $(this);
+    var find_in = select_all;
+
+    select_all.addClass("select_all "+settings.class);
+
+    while( !find_in.is("body") ){
+      var selectables = find_in.find(":checkbox.selectable");
+      if (selectables.length > 0){
+        selectables.addClass(settings.class);
+        find_in = $("body");
+      }
+      else{
+        find_in = find_in.parent();
+      }
+    }
+
+    $(".select_all."+settings.class).change(function(){
+      $(".selectable."+settings.class).prop('checked', $(this).prop("checked"));
     });
-    $(".selectable").change(function(){
-      if ($(".selectable:checked").length == $(".selectable").length)
-        $(".select_all").prop('checked', "checked");
+    $(".selectable."+settings.class).change(function(){
+      if ($(".selectable."+settings.class+":checked").length == $(".selectable."+settings.class).length)
+        $(".select_all."+settings.class).prop('checked', "checked");
       else
-        $(".select_all").attr('checked', false);
+        $(".select_all."+settings.class).prop('checked', false);
     });
   }
+  return $(this);
 }( jQuery ));
