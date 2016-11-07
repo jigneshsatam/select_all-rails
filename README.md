@@ -28,7 +28,20 @@ And add the following line to your application.js file:
 
 <p>Call the function on main checkbox and add class 'selectable' to sub-checkboxes.</p>
 
-<p>Example link: https://jsfiddle.net/jigneshsatam/qvd2mtjd/1/ </p>
+<p>Example link: http://jigneshsatam.github.io/checkbox_select_all/index_demo.html </p>
+
+
+Rails haml example:
+```
+= check_box_tag 'checkAll'
+= check_box_tag 'selected_ids[]', "1", false, class: 'selectable'
+= check_box_tag 'selected_ids[]', "2", false, class: 'selectable'
+= check_box_tag 'selected_ids[]', "3", false, class: 'selectable'
+- content_for :page_js do
+  :javascript
+    $("#checkAll").select_all();
+```
+
 
 ## Development
 
