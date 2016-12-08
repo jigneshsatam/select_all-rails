@@ -1,0 +1,674 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/select_all.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-86963238-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css.scss">
+  </head>
+  <body>
+    <header id="project_title_div">
+      <div id="project_title">Checkbox select all</div>
+      <div id="project_tagline">Simple select and unselect all check-boxes</div>
+    </header>
+    <nav class="center_align">
+      <div id="uses">
+        <h3>Homepage</h3>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all">
+            Checkbox select all
+          </a>
+        </div>
+      <div id="uses">
+        <h3>Functionalities</h3>
+        <div class="anchor_div">
+          <a href="#basic_usage">
+            Basic Usage
+          </a>
+        </div>
+        <div class="anchor_div">
+          <a href="#multiple_selections">
+            Multiple Seletions
+          </a>
+        </div>
+        <div class="anchor_div">
+          <a href="#ajax_added_checkboxes">
+            Ajax Added Checkboxes
+          </a>
+        </div>
+        <div class="anchor_div">
+          <a href="#show_selected_count">
+            Show Selected Count
+          </a>
+        </div>
+      <div id="downloads">
+        <h3>Downloads</h3>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all/zipball/master">
+            Download .zip
+          </a>
+        </div>
+        <div class="anchor_div">
+          <a href="https://github.com/JigneshSatam/checkbox_select_all/tarball/master">
+            Download tar.gz
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="ex1" id="basic_usage">
+        <header class="header">
+          <p class="header_title margin-top-zero">
+            Basic Usage
+          </p>
+        </header>
+        <div class="wrapper">
+          <div class="content glow content1">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" id="simpleCheckAll" class="checkbox">
+                      All Items
+                </label>
+              </li>
+
+              <hr>
+
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      Item 1
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      Item 2
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Item 3
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Item 4
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="title">
+          How To Use
+        </p>
+        <div class="container">
+          <p class="usage">
+            Call function:
+            <br> <b>select_all()</b> <br> on parent check-box <br> i.e. "All Items"
+            <br>
+            <br>
+            Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Item 1, Item 2, Item 3, Item 4
+          </p>
+          <pre>
+            <code>
+              <b>HTML</b>
+              <div  class="left_align">
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAll"</span><span class="tag">&gt;</span>
+                  &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAll"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Items
+                  &nbsp;<span class="tag">&lt;/label&gt;</span>
+                 <span class="tag">&lt;/input&gt;</span>
+              </div>
+              <b>Javascript</b>
+              <div  class="left_align">
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAll"</span><span>).</span><span class="attr">select_all</span><span>();
+              </div>
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section class="ex2" id="multiple_selections">
+        <header class="header">
+          <div class="header_title">Multiple Selection</div>
+          <div class='center_align light_gray'>More than One Select All in a Page</div>
+        </header>
+        <div class="wrapper big_wrapper">
+          <div class="content glow content2">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" id="checkAllFruits" class="checkbox">
+                      All Fruits
+                </label>
+              </li>
+
+              <hr>
+
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      Mango
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      Apple
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Banana
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Orange
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="content glow content2">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" id="checkAllAnimals" class="checkbox">
+                      All Animals
+                </label>
+              </li>
+
+              <hr>
+
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      Lion
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      Elephant
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Tiger
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Bear
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="title">
+          How To Use
+        </p>
+        <div class="container">
+          <div class="usage usage2">
+            <p>
+              <b><u> To Select Fruits</u></b>
+              <br>
+              Call function: <br><b>select_all({class: 'fruits'})</b><br> on parent check-box <br> i.e. "All Fruits"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Mango, Apple, Banana, Orange
+            </p>
+          </div>
+          <div class="usage usage2">
+            <p>
+              <b><u> To Select Animals</u></b>
+              <br>
+              Call function: <br><b>select_all({class: 'animals'})</b><br> on parent check-box <br> i.e. "All Animals"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Lion, Elephant, Tiger, Bear
+            </p>
+          </div>
+          <div style="clear: both"></div>
+          <pre>
+            <code>
+              <b>HTML</b>
+              <div  class="left_align">
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllFruits"</span><span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllFruits"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Fruits
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllAnimals"</span><span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllAnimals"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Animals
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+              </div>
+              <b>Javascript</b>
+              <div  class="left_align">
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllFruits"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">class</span><span>:</span> <span class="text">"fruits"</span>
+                <span>});</span>
+
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllAnimals"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">class</span><span>:</span> <span class="text">"animals"</span>
+                <span>});</span>
+              </div>
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section class="ex3" id="ajax_added_checkboxes">
+        <header class="header">
+          <div class="header_title">Ajax Added Checkboxes</div>
+          <div class='center_align light_gray'>Infinite Scroll with Select All</div>
+        </header>
+        <div class="wrapper mid_wrapper">
+          <div class="content glow content1">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox" for="infiniteCheckAll">
+                  <input type="checkbox" id="infiniteCheckAll" class="checkbox">
+                      All Items
+                </label>
+              </li>
+              <hr>
+              <div class="overflow">
+                <div class="inner">
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable" >
+                          Item 1
+                    </label>
+                  </li>
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable">
+                          Item 2
+                    </label>
+                  </li>
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable" checked>
+                          Item 3
+                    </label>
+                  </li>
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable" checked>
+                          Item 4
+                    </label>
+                  </li>
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable" checked>
+                          Item 5
+                    </label>
+                  </li>
+                  <li class="list__item">
+                    <label class="label--checkbox">
+                        <input type="checkbox" class="checkbox selectable" checked>
+                          Item 6
+                    </label>
+                  </li>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <p class="title">
+          How To Use
+        </p>
+        <div class="container">
+          <div class="usage">
+            <p>
+              <u> To <b>Auto Select 'All Items'</b> which are going to get added from <b>Infinite Scroll</b></u>
+              <br>
+              Call function:
+              <br><b>select_all({infinite_scroll_select: true})</b><br>
+              on parent check-box <br> i.e. "All Items"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Item 1, Item 2, Item 3, Item 4,..
+              <br>
+              <div class="note">All the new checkboxes which are going to get added by infinite </br> scroll should have class <u> selectable </u></div>
+            </p>
+          </div>
+          <div class="more_info">
+            <a class="toggler" data-toggler="inifinite_info">Show more</a>
+            <div  class="hidden" data-togglable="inifinite_info">
+              <h3 class="light_gray">
+                New check-boxes that are added in dome structure
+              </h3>
+              <li>will be <b>selected/checked</b> if parent checkbox is checked</li>
+              <li>will be <b>not-selected/unchecked</b> if parent checkbox is unchecked</li>
+            </div>
+          </div>
+          <pre>
+            <code>
+              <b>HTML</b>
+              <div  class="left_align">
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"infiniteCheckAll"</span><span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"infiniteCheckAll"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Items
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+              </div>
+              <b>Javascript</b>
+              <div  class="left_align">
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#infiniteCheckAll"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">infinite_scroll_select</span><span>:</span> <span class="attr">true</span>
+                <span>});</span>
+              </div>
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <section class="ex4" id="show_selected_count">
+        <header class="header">
+          <p class="header_title">Show Selected Count</p>
+        </header>
+        <div class="wrapper very_big_wrapper">
+          <div class="content glow content3">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox" id="showCarCount">
+                  <input type="checkbox" id="selectAllCars" class="checkbox">
+                      All Cars
+                </label>
+              </li>
+              <hr>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      Aston Martin
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      Bentley
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Audi
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      BMW
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Mercedes
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Ferrari
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="content glow content3">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox" id="showColorCount">
+                  <input type="checkbox" id="selectAllColors" class="checkbox">
+                      All Colors
+                </label>
+              </li>
+              <hr>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      Blue
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      Green
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Yellow
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Orange
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Red
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Violet
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="content glow content3">
+            <ul class="list">
+              <li class="list__item">
+                <label class="label--checkbox" id="showLangCount">
+                  <input type="checkbox" id="selectAllLanguages" class="checkbox">
+                      All Languages
+                </label>
+              </li>
+              <hr>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" >
+                      JAVA
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable">
+                      C++
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      JavaScript
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Ruby
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Python
+                </label>
+              </li>
+              <li class="list__item">
+                <label class="label--checkbox">
+                    <input type="checkbox" class="checkbox selectable" checked>
+                      Go
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="title">
+          How To Use
+        </p>
+        <div class="container big_container">
+          <div class="usage usage3">
+            <p>
+              Call function:
+              <br><b>select_all({show_count: "checked",</br>attach_count_to: "#showCarCount"})</b><br>
+              on parent check-box <br> i.e. "All Cars"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Aston Martin, Bentley, Audi, BMW,..
+            </p>
+          </div>
+          <div class="usage usage3">
+            <p>
+              Call function:
+              <br><b>select_all({show_count: "unchecked",</br>attach_count_to:"#showColorCount"})</b><br>
+              on parent check-box <br> i.e. "All Colors"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. Blue, Green, Yellow, Orange,..
+            </p>
+          </div>
+          <div class="usage usage3">
+            <p>
+              Call function:
+              <br><b>select_all({</br>show_count: "checked_with_total",</br>attach_count_to:"#showLangCount"})</b><br>
+              on parent check-box <br> i.e. "All Languages"
+              <br>
+              <br>
+              Add class='<b>selectable</b>' <br> on children-checkboxes/sub-checkboxes <br> i.e. JAVA, C++, Javascript, Ruby,..
+            </p>
+          </div>
+          <div style="clear: both"></div>
+          <div class="note">
+            If "attach_count_to" parameter is not passed
+            <br>
+            then count will get attach to the parent checkbox as a sibling
+            <br>
+            i.e "All Cars" sibling
+          </div>
+          <pre>
+            <code>
+              <b>HTML</b>
+              <div  class="left_align">
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllCars"</span> <span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllCars"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Cars
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllColors"</span> <span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllColors"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Colors
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+
+                <span class="tag"> &lt;input </span> <span class="attr">type=</span><span class="attr_cont">"checkbox"</span> <span class="attr">id=</span><span class="attr_cont">"selectAllLanguages"</span> <span class="tag">&gt;</span>
+                &nbsp;<span class="tag">&lt;label</span> <span class="attr">for=</span><span class="attr_cont">"selectAllLanguages"</span> <span class="tag">&gt;</span>
+                  &nbsp;&nbsp;  All Languages
+                &nbsp;<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;/input&gt;</span>
+              </div>
+              <b>Javascript</b>
+              <div  class="left_align">
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllCars"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">show_count</span><span>:</span> <span class="text">"checked"</span><span>,</span>
+                &nbsp;<span class="parameter">attach_count_to</span><span>:</span> <span class="text">"#showCarCount"</span>
+                <span>});</span>
+
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllColors"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">show_count</span><span>:</span> <span class="text">"unchecked"</span><span>,</span>
+                &nbsp;<span class="parameter">attach_count_to</span><span>:</span> <span class="text">"#showColorCount"</span>
+                <span>});</span>
+
+                <span class="tag">$</span><span>(</span><span class="attr_cont">"#selectAllLanguages"</span><span>).</span><span class="attr">select_all</span><span>({</span>
+                &nbsp;<span class="parameter">show_count</span><span>:</span> <span class="text">"checked_with_total"</span><span>,</span>
+                &nbsp;<span class="parameter">attach_count_to</span><span>:</span> <span class="text">"#showLangCount"</span>
+                <span>});</span>
+              </div>
+            </code>
+          </pre>
+        </div>
+      </section>
+    </main>
+
+
+    <script type="text/javascript">
+      $(".ex1").find("#simpleCheckAll").select_all();
+      $(".ex2").find("#checkAllFruits").select_all({class: "fruits"});
+      $(".ex2").find("#checkAllAnimals").select_all({class: "animals"});
+      $(".ex3").find("#infiniteCheckAll").select_all({class: "infinite", infinite_scroll_select: true});
+      $(".ex4").find("#selectAllCars").select_all({class: "cars", show_count: "checked", attach_count_to: "#showCarCount"});
+      $(".ex4").find("#selectAllColors").select_all({class: "Color", show_count: "unchecked", attach_count_to: "#showColorCount"});
+      $(".ex4").find("#selectAllLanguages").select_all({class: "languages", show_count: "checked_with_total", attach_count_to: "#showLangCount"});
+    </script>
+    <script type="text/javascript">
+      var infinite_item_count = 6;
+      $('.overflow').scroll(function(){
+        var top = $('.overflow').scrollTop();
+        var diff = $(".inner").height() - $('.overflow').height();
+        if(top >= diff){
+          $.ajax({
+            url: 'page.json',
+            dataType: 'json',
+            success: function(response){
+              var structure = $.parseHTML(response["new_items"]);
+              $(structure).each(function(){
+                $(this).find("label").append("Item "+ ++infinite_item_count);
+              });
+              $(".inner").append(structure);
+            }
+          });
+        }
+      });
+    </script>
+    <script type="text/javascript">
+      $('#uses a').click(function(){
+        $('html, body').animate({
+          scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        $("a").removeClass("active");
+        $(this).addClass("active");
+        return false;
+      });
+    </script>
+    <script type="text/javascript">
+    $(".toggler").click(function(){
+      togglable_data = $(this).data("toggler")
+      $("[data-togglable="+togglable_data+"]").toggle("slow");
+    });
+    $(window).scroll(function(){
+      if($(window).scrollTop() > $("#project_title_div").height()){
+        $('nav').css('top', 0).css('position', "fixed")
+      }
+      else{
+        $('nav').css('top', $("#project_title_div").height()).css('position', "initial")
+      }
+      console.log($('nav').css('position'))
+    })
+    </script>
+  </body>
+</html>
