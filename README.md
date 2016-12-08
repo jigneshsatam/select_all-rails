@@ -1,12 +1,17 @@
-# SelectAll::Rails
+# select_all-rails
+***Simple to check and uncheck checkboxes***
+***
+[![Gem Version](https://badge.fury.io/rb/select_all-rails.svg)](https://badge.fury.io/rb/select_all-rails) [![Code Climate](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails) [![Issue Count](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/select_all/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
+Select_all-rails is gem for implementing '**select-all**' functionality in more simple and effective way in your ruby-on-rails application.
+## Functionalities
+* [***Basic Usage***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#basic_usage) - Selecting/Unselecting multiple checkboxes.
+* [***Multiple Seletions***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#multiple_selections) - Implementing more than one select-all functionalities in a page.
+* [***Ajax Added Checkboxes***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#ajax_added_checkboxes) - Implementing select-all functionality to new checkboxes added by an Ajax call.
+* [***Show Selection/Count***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#show_selected_count) - Display selected checkboxes count or checkboxes remaining to select count or selected checkboxes count out of total checkboxes.
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's **Gemfile**:
 
 ```ruby
 gem 'select_all-rails'
@@ -19,26 +24,37 @@ And then execute:
 Or install it yourself as:
 
     $ gem install select_all-rails
-    
-And add the following line to your application.js file:
+
+And add the following line to your **application.js** file after jquery:
 
     //= require select_all.js
 
 ## Usage
+Call the function **select_all()** on main checkbox and add class **'selectable'** to sub-checkboxes.
 
-<p>Call the function on main checkbox and add class 'selectable' to sub-checkboxes.</p>
+HTML example:
+```html
+<input type="checkbox" id="selectAll">All Items</input>
 
-<p>Example link: http://jigneshsatam.github.io/checkbox_select_all/index_demo.html </p>
+<input type="checkbox" class="selectable">Item 1</input>
+<input type="checkbox" class="selectable">Item 2</input>
+<input type="checkbox" class="selectable">Item 3</input>
+
+<script type="text/javascript">
+    $("#selectAll").select_all();
+</script>
+```
+***For more usage checkout*** [**Demo**](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html)
 
 
 Rails haml example:
-```
+```haml
 = check_box_tag 'checkAll'
 = check_box_tag 'selected_ids[]', "1", false, class: 'selectable'
 = check_box_tag 'selected_ids[]', "2", false, class: 'selectable'
 = check_box_tag 'selected_ids[]', "3", false, class: 'selectable'
-- content_for :page_js do
-  :javascript
+
+:javascript
     $("#checkAll").select_all();
 ```
 
