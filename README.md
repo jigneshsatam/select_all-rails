@@ -9,6 +9,7 @@ Select_all-rails is gem for implementing '**select-all**' functionality in more 
 * [***Multiple Seletions***](http://jigneshsatam.github.io/select_all-rails/#multiple_selections) - Implementing more than one select-all functionalities in a page.
 * [***Ajax Added Checkboxes***](http://jigneshsatam.github.io/select_all-rails/#ajax_added_checkboxes) - Implementing select-all functionality to new checkboxes added by an Ajax call.
 * [***Show Selection/Count***](http://jigneshsatam.github.io/select_all-rails/#show_selected_count) - Display selected checkboxes count or checkboxes remaining to select count or selected checkboxes count out of total checkboxes.
+
 ## Installation
 
 Add this line to your application's **Gemfile**:
