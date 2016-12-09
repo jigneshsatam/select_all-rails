@@ -1,14 +1,15 @@
 # select_all-rails
 ***Simple to check and uncheck checkboxes***
 ***
-[![Gem Version](https://badge.fury.io/rb/select_all-rails.svg)](https://badge.fury.io/rb/select_all-rails) [![Code Climate](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails) [![Issue Count](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails)
+[![Gem Version](https://badge.fury.io/rb/select_all-rails@2x.png)](https://badge.fury.io/rb/select_all-rails) [![Code Climate](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails) [![Issue Count](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails)
 
 Select_all-rails is gem for implementing '**select-all**' functionality in more simple and effective way in your ruby-on-rails application.
 ## Functionalities
-* [***Basic Usage***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#basic_usage) - Selecting/Unselecting multiple checkboxes.
-* [***Multiple Seletions***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#multiple_selections) - Implementing more than one select-all functionalities in a page.
-* [***Ajax Added Checkboxes***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#ajax_added_checkboxes) - Implementing select-all functionality to new checkboxes added by an Ajax call.
-* [***Show Selection/Count***](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html#show_selected_count) - Display selected checkboxes count or checkboxes remaining to select count or selected checkboxes count out of total checkboxes.
+* [***Basic Usage***](http://jigneshsatam.github.io/select_all-rails/#basic_usage) - Selecting/Unselecting multiple checkboxes.
+* [***Multiple Seletions***](http://jigneshsatam.github.io/select_all-rails/#multiple_selections) - Implementing more than one select-all functionalities in a page.
+* [***Ajax Added Checkboxes***](http://jigneshsatam.github.io/select_all-rails/#ajax_added_checkboxes) - Implementing select-all functionality to new checkboxes added by an Ajax call.
+* [***Show Selection/Count***](http://jigneshsatam.github.io/select_all-rails/#show_selected_count) - Display selected checkboxes count or checkboxes remaining to select count or selected checkboxes count out of total checkboxes.
+
 ## Installation
 
 Add this line to your application's **Gemfile**:
@@ -44,7 +45,7 @@ HTML example:
     $("#selectAll").select_all();
 </script>
 ```
-***For more usage checkout*** [**Demo**](http://jigneshsatam.github.io/checkbox_select_all/index_demo.html)
+***For more usage checkout*** [**Demo**](http://jigneshsatam.github.io/select_all-rails/)
 
 
 Rails haml example:
