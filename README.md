@@ -1,7 +1,7 @@
 # select_all-rails
 ***Simple to check and uncheck checkboxes***
 ***
-[![Gem Version](https://badge.fury.io/rb/select_all-rails@2x.png)](https://badge.fury.io/rb/select_all-rails) [![Code Climate](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails) [![Issue Count](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails)
+[![Gem Version](https://badge.fury.io/rb/select_all-rails@2x.png)](https://badge.fury.io/rb/select_all-rails) [![Build Status](https://travis-ci.org/JigneshSatam/select_all-rails.svg?branch=master)](https://travis-ci.org/JigneshSatam/select_all-rails) [![Code Climate](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/gpa.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails) [![Issue Count](https://codeclimate.com/github/JigneshSatam/select_all-rails/badges/issue_count.svg)](https://codeclimate.com/github/JigneshSatam/select_all-rails)
 
 Select_all-rails is gem for implementing '**select-all**' functionality in more simple and effective way in your ruby-on-rails application.
 ## Functionalities
