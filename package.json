@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JigneshSatam/checkbox_select_all.git"
+    "url": "git+https://github.com/JigneshSatam/select_all-rails.git"
   },
   "author": "Jignesh Satam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JigneshSatam/checkbox_select_all/issues"
+    "url": "https://github.com/JigneshSatam/select_all-rails/issues"
   },
-  "homepage": "https://github.com/JigneshSatam/checkbox_select_all#readme",
+  "homepage": "https://github.com/JigneshSatam/select_all-rails",
   "dependencies": {
     "chai": "^3.5.0",
     "express": "^4.14.0",

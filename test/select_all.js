@@ -20,40 +20,41 @@ describe("Select All", function() {
       $(document.body).empty();
     });
 
-    it("adds class select_all on applied checkbox", function() {
-      $("#parent_checkbox").select_all();
-      expect($("#parent_checkbox").hasClass('select_all')).to.equal(true);
+    describe("On initialization", function(){
+      it("Adds class select_all on applied checkbox.", function() {
+        $("#parent_checkbox").select_all();
+        expect($("#parent_checkbox").hasClass('select_all')).to.equal(true);
+      });
+
+      it("After click parent checkbox, all children checkboxes should get selected.", function() {
+        selected_checkboxes = $(".selectable:checked").length
+        not_selected_checkboxes = $(".selectable:not(:checked)").length
+        $('#parent_checkbox').click(function(err){
+          if (err) done(err);
+          else{
+            expect($(".selectable:checked").length).to.equal( selected_checkboxes + not_selected_checkboxes);
+            done();
+          }
+        });
+      });
     });
 
-    it("already selected checkboxes", function() {
-      expect($(".selectable:checked").length).to.equal(2);
-    });
-
-    it("After click parent checkbox all children checkboxes should get selected", function() {
-      $('#parent_checkbox').click(function(err){
-        if (err) done(err);
-        else{
-          expect($(".selectable:checked").length).to.equal(4);
+    describe("When all checkboxes are selected", function() {
+      it("After click any child checkbox, parent checkboxes should get unselected", function() {
+        $('#parent_checkbox').click(function(err){
+          if (err) done(err);
+          else{
+            $('.selectable').first().click(function(err){
+              if (err) done(err);
+              else{
+                expect($("#parent_checkbox").is(":checked")).to.equal(false);
+                done();
+              }
+            });
           done();
-        }
+          }
+        });
       });
-    });
-
-    it("After click any child checkbox parent checkboxes should get unselected", function() {
-      $('#parent_checkbox').click(function(err){
-        if (err) done(err);
-        else{
-          $('.selectable').first().click(function(err){
-            if (err) done(err);
-            else{
-              expect($(".selectable:checked").length).to.equal(4);
-              done();
-            }
-          });
-        done();
-        }
-      });
-      expect($("#parent_checkbox").is(":checked")).to.equal(false);
     });
   });
 });
