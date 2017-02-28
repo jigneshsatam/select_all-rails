@@ -22,22 +22,18 @@ describe("Select All", function() {
 
     describe("On initialization", function(){
       it("Adds class 'select_all' on applied(parent) checkbox.", function() {
-        $("#parent_checkbox").select_all();
         expect($("#parent_checkbox").hasClass('select_all')).to.equal(true);
       });
 
       it("Adds data 'select_all_uid' on applied(parent) checkbox.", function() {
-        $("#parent_checkbox").select_all();
         expect($("#parent_checkbox").data("select_all_uid")).to.not.be.null;
       });
 
       it("Adds data 'select_all_class' as 'no_class' on applied(parent) checkbox.", function() {
-        $("#parent_checkbox").select_all();
         expect($("#parent_checkbox").data("select_all_class")).to.equal("no_class");
       });
 
       it("Adds data 'show_count' to 'false' on applied(parent) checkbox.", function() {
-        $("#parent_checkbox").select_all();
         expect($("#parent_checkbox").data("show_count")).to.equal(false);
       });
 
@@ -101,14 +97,50 @@ describe("Select All", function() {
     });
 
     describe("On initialization", function(){
-      it("Adds data 'select_all_class' as 'fruits' on All Fruits checkbox.", function() {
-        $("#all_fruits").select_all({class: 'fruits'});
+      it("Adds data 'select_all_class' as 'fruits' on All Fruits(parent) checkbox.", function() {
         expect($("#all_fruits").data("select_all_class")).to.equal("fruits");
       });
 
-      it("Adds data 'select_all_class' as 'animals' on All Animals checkbox.", function() {
-        $("#all_animals").select_all({class: 'animals'});
+      it("Adds data 'select_all_class' as 'animals' on All Animals(parent) checkbox.", function() {
         expect($("#all_animals").data("select_all_class")).to.equal("animals");
+      });
+    });
+
+    describe("On selecting All fruits(parent) checkbox", function(){
+      it("All children with class 'fruits' should get selected.", function(){
+        selected_fruits = $(".selectable.fruits:checked").length
+        not_selected_fruits = $(".selectable.fruits:not(:checked)").length
+        $('#all_fruits').click(function(err){
+          if (err) done(err);
+          else{
+            expect($(".selectable.fruits:checked").length).to.equal( selected_fruits + not_selected_fruits);
+            done();
+          }
+        });
+      });
+
+      describe("Checkboxes which don't have class 'fruits' should remain unaffected.", function(){
+        it("Selected checkboxes should remain selected.", function(){
+          non_fruits_selected_checkboxes = $(".selectable:not(.fruits):checked").length;
+          $("#all_fruits").click(function(err){
+            if(err) done(err);
+            else{
+              $(".selectable:not(.fruits):checked").length.to.equal(non_fruits_selected_checkboxes);
+              done();
+            }
+          });
+        });
+
+        it("Not selected checkboxes should remain not selected.", function(){
+          non_fruits_not_selected_checkboxes = $(".selectable:not(.fruits):not(checked)").length;
+          $("#all_fruits").click(function(err){
+            if(err) done(err);
+            else{
+              $(".selectable:not(.fruits):not(checked)").length.to.equal(non_fruits_not_selected_checkboxes);
+              done();
+            }
+          });
+        });
       });
     });
   });
