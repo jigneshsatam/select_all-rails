@@ -143,5 +143,53 @@ describe("Select All", function() {
         });
       });
     });
+
+    describe("When all fruits are selected", function() {
+      it("On unselecting any children fruit, All-Fruits(parent) checkbox should get unselected.", function(){
+        $("#all_fruits").click(function(err){
+          if(err) done(err);
+          else{
+            $(".selectable.fruits").first().click(function(err){
+              if(err) done(err);
+              else{
+                $("#all_fruits:checked").length.to.equal(0)
+              }
+            });
+          }
+        });
+      });
+
+      describe("On unselecting any children fruit, All the animal checkboxes should remain unchanged.", function(){
+        it("Selected animals should remain selected.", function(){
+          $("#all_fruits").click(function(err){
+            if(err) done(err);
+            else{
+              selected_animals = $(".animals:checked").length
+              $(".selectable.fruits").first().click(function(err){
+                if(err) done(err);
+                else{
+                  $(".animals:checked").length.to.equal(selected_animals)
+                }
+              });
+            }
+          });
+        });
+
+        it("Unselected animals should remain unselected.", function(){
+          $("#all_fruits").click(function(err){
+            if(err) done(err);
+            else{
+              selected_animals = $(".animals:not(checked)").length
+              $(".selectable.fruits").first().click(function(err){
+                if(err) done(err);
+                else{
+                  $(".animals:not(checked)").length.to.equal(selected_animals)
+                }
+              });
+            }
+          });
+        });
+      });
+    });
   });
 });
