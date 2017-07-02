@@ -1,5 +1,5 @@
 {
-  "name": "checkbox_select_all",
+  "name": "select_all-rails",
   "version": "0.3.0",
   "description": "Simple to select and unselect all check-boxes",
   "main": "test/select_all.js",
