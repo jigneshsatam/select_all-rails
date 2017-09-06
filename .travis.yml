@@ -4,3 +4,20 @@ node_js:
   - "6.1"
   - "5.11"
   - "4"
+env:
+  CODECLIMATE_REPO_TOKEN: 978ab6ea7cddf11b3f8043b12d0c7e616c12b726640f4403ec07ee91050faa8e
+exclude_paths:
+  - "lib/"
+  - "bin/"
+  - "node_modules/"
+  - "pkg/"
+  - "test/"
+  - "**.txt"
+  - "**.md"
+  - "**.json"
+  - ".gitignore"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "LICENSE"
+  - "Rakefile"
+  - "select_all-rails.gemspec"
